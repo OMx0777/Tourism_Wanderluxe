@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'config.php';
 
 // Fetch all states from the database
@@ -20,7 +21,27 @@ $states_result = $conn->query($states_query);
         <div class="logo">WanderLuxe.</div>
         <div class="nav-links">
             <a href="index.php">Home</a>
-            <a href="manager_login.php" class="btn-manager">Manager Login</a>
+            
+            <?php if(isset($_SESSION['tourist_id'])): ?>
+                <a href="my_bookings.php">My Bookings</a>
+                <a href="#" style="color: var(--accent);">Hi, <?php echo htmlspecialchars($_SESSION['tourist_username']); ?></a>
+                <a href="logout.php">Logout</a>
+                
+            <?php elseif(isset($_SESSION['manager_id'])): ?>
+                <a href="manager_dashboard.php" style="color: var(--accent);">Manager Dashboard</a>
+                <a href="logout.php">Logout</a>
+                
+            <?php elseif(isset($_SESSION['admin_id'])): ?>
+                <a href="admin_dashboard.php" style="color: #ff6b6b; font-weight: 500;">System Control Panel</a>
+                <a href="logout.php">Logout</a>
+                
+            <?php else: ?>
+                <a href="register.php">Sign Up</a>
+                <a href="login.php">Login</a>
+                <a href="manager_login.php" class="btn-manager">Manager Portal</a>
+                <a href="admin_login.php" class="btn-manager" style="border-color: #ff6b6b; color: #ff6b6b;">Admin Login</a>
+            <?php endif; ?>
+
         </div>
     </nav>
 

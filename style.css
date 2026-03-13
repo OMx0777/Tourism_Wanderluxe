@@ -135,3 +135,120 @@ select option {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
 }
+
+
+/* --- Results Page Styles --- */
+.results-page {
+    /* Different cinematic background for the results page */
+    background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), 
+                url('https://images.unsplash.com/photo-1506461883276-594a12b11cb3?q=80&w=2000') center/cover fixed;
+    min-height: 100vh;
+}
+
+.static-nav {
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 5%;
+}
+
+.results-container {
+    padding: 4rem 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.results-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.results-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 3rem;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.place-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.place-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+.hotels-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.hotels-section h3 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hotel-item {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.hotel-details {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0.5rem 0;
+}
+
+.hotel-price {
+    font-weight: 600;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.no-hotels {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+}
