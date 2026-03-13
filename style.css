@@ -1,0 +1,137 @@
+:root {
+    --primary-dark: #1a1a2e;
+    --accent: #d4af37; /* Elegant Gold */
+    --text-light: #f4f4f4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
+.hero-section {
+    height: 100vh;
+    /* Using a high-quality Unsplash image with an overlay for readability */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.glass-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.btn-manager {
+    border: 1px solid var(--accent);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+/* Glassmorphism Effect */
+.search-glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.search-form {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: rgba(255,255,255,0.8);
+}
+
+select {
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+    cursor: pointer;
+    min-width: 250px;
+}
+
+select option {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.btn-search {
+    background: var(--accent);
+    color: var(--primary-dark);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}

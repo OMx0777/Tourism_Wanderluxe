@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLuxe | Discover India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="glass-nav">
+        <div class="logo">WanderLuxe.</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Destinations</a>
+            <a href="#" class="btn-manager">Manager Login</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Find Your Next Escape.</h1>
+            <p>Curated stays and unforgettable experiences across India.</p>
+            
+            <div class="search-glass-panel">
+                <form id="searchForm" class="search-form">
+                    <div class="input-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state" onchange="fetchDistricts()">
+                            <option value="">Select State</option>
+                            <option value="1">Maharashtra</option>
+                            <option value="2">Kerala</option>
+                            <option value="3">Tamil Nadu</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="district">District</label>
+                        <select id="district" name="district" disabled>
+                            <option value="">Choose District</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-search">Explore</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
