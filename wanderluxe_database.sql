@@ -27,6 +27,11 @@ CREATE TABLE `bookings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tourist_id` int(11) NOT NULL,
   `hotel_id` int(11) NOT NULL,
+  `check_in` date DEFAULT NULL,
+  `check_out` date DEFAULT NULL,
+  `rooms` int(11) DEFAULT 1,
+  `total_price` decimal(10,2) DEFAULT NULL,
+  `payment_method` varchar(50) DEFAULT 'Pay at Arrival',
   `booking_date` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `tourist_id` (`tourist_id`),
@@ -44,7 +49,7 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
 INSERT INTO `bookings` VALUES
-(1,2,1,'2026-03-13 07:22:10');
+(2,2,2,'2026-03-14','2026-03-16',3,6000.00,'Pay at Arrival','2026-03-13 08:54:10');
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -105,7 +110,7 @@ CREATE TABLE `hotels` (
   KEY `manager_id` (`manager_id`),
   CONSTRAINT `1` FOREIGN KEY (`place_id`) REFERENCES `places` (`id`),
   CONSTRAINT `2` FOREIGN KEY (`manager_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +121,8 @@ SET @OLD_AUTOCOMMIT=@@AUTOCOMMIT, @@AUTOCOMMIT=0;
 LOCK TABLES `hotels` WRITE;
 /*!40000 ALTER TABLE `hotels` DISABLE KEYS */;
 INSERT INTO `hotels` VALUES
-(1,1,1,'Sathe Farm and Farmhouse','rihe,mulshi,pune',700.00,'AC',3);
+(1,1,1,'Sathe Farm and Farmhouse','rihe,mulshi,pune',700.00,'AC',3),
+(2,3,1,'sinhagad hotel','karapwadi, sinhagad',1000.00,'AC',4);
 /*!40000 ALTER TABLE `hotels` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -244,4 +250,4 @@ SET AUTOCOMMIT=@OLD_AUTOCOMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-03-13 13:53:55
+-- Dump completed on 2026-03-13 14:28:49
